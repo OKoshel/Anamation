@@ -1,45 +1,26 @@
 <script>
+import NavbarHeader from "@/components/navbar/NavbarHeader.vue";
+import {defineComponent} from "vue";
+
+
+export default defineComponent({
+   components: {NavbarHeader}
+})
 
 </script>
 
 <template>
-  <header>
-      <div class="wrapper">
-        Hello
-
-    </div>
-  </header>
-
-  <main>
-
-  </main>
+<NavbarHeader/>
+   <div class="app"></div>
 </template>
 
 <style>
-header {
-  line-height: 1.5;
+
+.app{
+   padding: 24px 40px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
