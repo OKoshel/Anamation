@@ -40,7 +40,7 @@ export default {
     color: #101820
     text-align: right
     font-family: Suisse Intl
-    font-size: 110px
+    font-size: 135px
     font-style: normal
     font-weight: 400
     line-height: 96%

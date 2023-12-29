@@ -19,7 +19,7 @@ export default {};
     h2
       color: black
       font-family: Suisse Intl
-      font-size: 62px
+      font-size: 82px
       font-style: normal
       font-weight: 400
       line-height: 96%
@@ -31,5 +31,5 @@ export default {};
       font-weight: 400
       line-height: 120.5%
       position: absolute
-      top: 180px
+      top: 280px
 </style>
