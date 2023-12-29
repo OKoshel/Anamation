@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SidebarItemRerender from "@/components/sidebar/SidebarItemRerender.vue";
+import SidebarItemRerender from "@/components/navbar/components/NavbarItemRerender.vue";
 
 export default {
   components: {

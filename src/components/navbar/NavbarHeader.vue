@@ -23,7 +23,7 @@
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiCartArrowDown } from "@mdi/js";
 import { mdiAccountEdit } from "@mdi/js";
-import SidebarItems from "@/components/sidebar/SidebarItems.vue";
+import SidebarItems from "@/components/navbar/components/NavbarItems.vue";
 
 export default {
   name: "navbarItems",

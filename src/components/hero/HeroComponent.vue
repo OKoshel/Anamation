@@ -39,14 +39,13 @@ export default {
     top: 90px
 
   &__image
-    position: absolute
-    top: 0
-    right: 0
+
 
     img
       height: 869px
-      object-fit: contain
+      object-fit: cover
       position: absolute
+      width: 100%
       top: 0
       right: 0
 
