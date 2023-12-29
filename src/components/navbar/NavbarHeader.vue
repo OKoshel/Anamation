@@ -1,58 +1,76 @@
 <template>
-    <div class="navbar-wrapp">
-        <div class="navbar-items">
-            <ul class="d-flex align-items-center gap-3 list-unstyled">
-                <li>Home</li>
-                <li>Store</li>
-                <li>Account</li>
-                <li>
-                    <SvgIcon type="mdi" :path="mdiCart"  :style="{height: 23, width: 25}" />
-                </li>
-                <li>
-                    <SvgIcon type="mdi" :path="account" class="icon"/>
-                </li>
-            </ul>
-        </div>
+  <div class="navbar-wrapp d-flex justify-content-between">
+    <img src="/header-logo.svg" />
+    <div>
+      <SidebarItems />
     </div>
+    <div class="d-flex navbar-call-wrapp">
+      <div>
+        <ul class="list-unstyled d-flex gap-4">
+          <li class="sidebar-item">We're hiring</li>
+          <li class="sidebar-item">Contacts</li>
+        </ul>
+      </div>
+      <div class="navbar-call d-flex align-items-center">
+        <img src="/arr.svg" />
+        <p>Book a call</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiCartArrowDown } from '@mdi/js';
-import { mdiAccountEdit } from '@mdi/js';
-
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiCartArrowDown } from "@mdi/js";
+import { mdiAccountEdit } from "@mdi/js";
+import SidebarItems from "@/components/sidebar/SidebarItems.vue";
 
 export default {
-    name: 'navbarItems',
-    components: { SvgIcon},
+  name: "navbarItems",
+  components: { SvgIcon, SidebarItems },
 
-    data() {
-        return {
-            mdiCart: mdiCartArrowDown,
-            account: mdiAccountEdit
-        };
-    },
-
-}
-
-
+  data() {
+    return {
+      mdiCart: mdiCartArrowDown,
+      account: mdiAccountEdit,
+    };
+  },
+};
 </script>
 
 <style lang="sass" scoped>
 
-.navbar-wrapp
-      height: 60px
+.navbar
+  &-call
+    display: flex
+    width: 330px
+    height: 51px
+    padding-right: 18px
+    justify-content: flex-end
+    align-items: center
+    gap: 55px
+    flex-shrink: 0
+    background: #101820
+    &-wrapp
+      gap: 118px
+    p
+      color: #E63E3A
+      font-family: Suisse Intl
+      font-size: 22px
+      font-weight: 400
+      margin-bottom: 0px
+
+
+  &-wrapp
+      height: 87px
       width: 100%
       display: flex
-      justify-content: flex-end
       align-items: center
-      box-shadow: inset -1px 0px 0px rgba(145, 158, 171, 0.24)
-      padding: 10px 36px 10px 10px
-      background-color: white
-      border-bottom: 1px solid rgba(145, 158, 171, 0.24)
-
+      padding: 18px 20px
 
 .icon
     height: 25px
     width: 25px
+    fill: black
+    color: black
 </style>

@@ -1,14 +1,10 @@
-import './assets/main.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createApp } from 'vue'
-import App from './App.vue'
+import "./assets/main.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createApp } from "vue";
+import App from "./App.vue";
 import router from "@/router/router.js";
 import store from "@/store/index.js";
 
-const app = createApp(App)
+const app = createApp(App);
 
-
-app
-    .use(store)
-    .use(router)
-    .mount('#app')
+app.use(store).use(router).mount("#app");

@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import { computed } from "vue";
-
 export default {
   props: {
     item: {
@@ -20,7 +18,7 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .sidebar-item
   padding: 10px
   width: 100%
@@ -28,9 +26,15 @@ export default {
   align-items: center
   justify-content: center
   cursor: pointer
-  color: black
   text-decoration: none
+  white-space: nowrap
+  color: #101820
+  font-family: Suisse Intl
+  font-size: 22px
+  font-style: normal
+  font-weight: 400
 
-.active
-  background-color: aliceblue
+
+//.active
+//  background-color: aliceblue
 </style>
