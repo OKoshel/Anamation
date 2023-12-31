@@ -1,7 +1,7 @@
 <template>
   <div class="graph-title d-flex flex-column position-relative">
     <div class="col-8">
-      <h2>Consitent leads flow to streamline Your business growth.</h2>
+      <h2>Consistent leads flow to streamline Your business growth.</h2>
     </div>
     <p>
       We combine disruptive marketing techniques with proven<br />

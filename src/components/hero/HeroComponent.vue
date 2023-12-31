@@ -1,14 +1,7 @@
 <template>
-  <div class="position-relative">
+  <div class="position-absolute top-0 w-100">
     <div class="main-hero">
-      <div
-        class="main-hero__logo d-flex justify-content-between position-relative"
-      >
-        <div class="d-flex flex-column position-relative">
-          <img src="/respect.svg" />
-          <img src="/dot.svg" class="main-hero-dot" />
-          <img src="/studio.svg" class="main-hero-studio" />
-        </div>
+      <div class="main-hero__logo d-flex justify-content-end">
         <h4 class="main-hero__logo-name">Digital Marketing<br />Agency</h4>
       </div>
       <div class="main-hero__image">
@@ -28,15 +21,7 @@ export default {
 <style lang="sass" scoped>
 .main-hero
   height: 869px
-  &-dot
-    height: 10px
-    width: 10px
-  &-studio
-    width: 68.012px
-    height: 251.669px
-    position: absolute
-    left: 10px
-    top: 90px
+
 
   &__image
 
@@ -44,7 +29,8 @@ export default {
     img
       height: 869px
       object-fit: cover
-      position: absolute
+      //margin-top:
+      //position: absolute
       width: 100%
       top: 0
       right: 0
@@ -52,6 +38,8 @@ export default {
   &__logo
     z-index: 2
     padding: 20px
+    position: absolute
+    width: 100%
 
     &-name
       color: #E63E3A
