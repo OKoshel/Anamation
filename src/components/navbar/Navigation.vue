@@ -33,6 +33,7 @@ export default {
 .navigation
   height: 868px
   background-color: #E63E3A
+  margin-top: -587px
   &-wrapp
     padding: 20px
 
