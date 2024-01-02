@@ -1,5 +1,5 @@
 <template>
-  <div class="position-absolute top-0 w-100">
+  <div class="position-fixed top-0 w-100 hero vh-100">
     <div class="main-hero">
       <div class="main-hero__logo d-flex justify-content-end">
         <h4 class="main-hero__logo-name">Digital Marketing<br />Agency</h4>
@@ -13,24 +13,21 @@
 
 <script>
 import Navigation from "@/components/navbar/Navigation.vue";
+import NavbarHeader from "@/components/navbar/NavbarHeader.vue";
 export default {
-  components: { Navigation },
+  components: { NavbarHeader, Navigation },
 };
 </script>
 
 <style lang="sass" scoped>
+
 .main-hero
-  height: 869px
-
-
+  height: 100%
   &__image
-
-
+    height: 100%
     img
-      height: 869px
+      height: 100%
       object-fit: cover
-      //margin-top:
-      //position: absolute
       width: 100%
       top: 0
       right: 0

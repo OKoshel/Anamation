@@ -82,17 +82,17 @@ export default {
   display: flex
   width: 100px
   position: absolute
-  left: 20px
-  top: 110px
+  left: 5px
+  top: 105px
   z-index: 999
 
   h2
-    font-size: 80px
+    font-size: 70px
     color: #E63E3A
     font-family: Suisse Intl
 
 .letter, .word
-  font-size: 80px
+  font-size: 70px
   color: #E63E3A
   font-family: Suisse Intl
   z-index: 999

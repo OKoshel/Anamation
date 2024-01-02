@@ -22,4 +22,5 @@ export default {
 <style lang="sass" scoped>
 .graph-wrapp
   padding: 107px 20px
+  background-color: white
 </style>

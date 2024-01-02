@@ -33,7 +33,7 @@ export default {
 .navigation
   height: 868px
   background-color: #E63E3A
-  margin-top: -587px
+
   &-wrapp
     padding: 20px
 
@@ -41,7 +41,7 @@ export default {
     color: #101820
     text-align: right
     font-family: Suisse Intl
-    font-size: 135px
+    font-size: 100px
     font-style: normal
     font-weight: 400
     line-height: 96%

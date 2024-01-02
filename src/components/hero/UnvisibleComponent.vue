@@ -2,16 +2,13 @@
   <div class="d-flex flex-column unvisible-component">
     <div class="timer" id="numberContainer">{{ currentNumber }}</div>
   </div>
-  <HeroComponent />
 </template>
 
 <script>
-import HeroComponent from "@/components/hero/HeroComponent.vue";
 import LogoText from "@/components/hero/LogoText.vue";
 
 export default {
-  component: {
-    HeroComponent,
+  components: {
     LogoText,
   },
   data() {
@@ -19,6 +16,7 @@ export default {
       numbers: ["04", "19", "23", "74", "88", "98"],
       currentIndex: 0,
       currentNumber: "04",
+      intervalId: null,
     };
   },
   mounted() {
@@ -30,6 +28,9 @@ export default {
       setInterval(() => {
         this.currentIndex = (this.currentIndex + 1) % this.numbers.length;
         this.currentNumber = this.numbers[this.currentIndex];
+        if (this.currentIndex === this.numbers.length - 1) {
+          clearInterval(this.intervalId);
+        }
       }, interval);
     },
   },
@@ -46,12 +47,12 @@ export default {
   position: absolute
   top: 0
   width: 100%
-  z-index: 5
+  z-index: 3
 
 
 .timer
   position: absolute
-  font-size: 200px
+  font-size: 140px
   bottom: 20px
   right: 30px
 </style>

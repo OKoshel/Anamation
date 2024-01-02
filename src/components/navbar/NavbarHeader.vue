@@ -2,7 +2,7 @@
   <div class="navbar-wrapp d-flex justify-content-between">
     <img src="/header-logo.svg" />
     <div>
-      <SidebarItems />
+      <NavbarItems />
     </div>
     <div class="d-flex navbar-call-wrapp">
       <div>
@@ -23,11 +23,11 @@
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiCartArrowDown } from "@mdi/js";
 import { mdiAccountEdit } from "@mdi/js";
-import SidebarItems from "@/components/navbar/components/NavbarItems.vue";
+import NavbarItems from "@/components/navbar/components/NavbarItems.vue";
 
 export default {
   name: "navbarItems",
-  components: { SvgIcon, SidebarItems },
+  components: { SvgIcon, NavbarItems },
 
   data() {
     return {
@@ -41,6 +41,7 @@ export default {
 <style lang="sass" scoped>
 
 .navbar
+
   &-call
     display: flex
     width: 330px
@@ -53,6 +54,7 @@ export default {
     background: #101820
     &-wrapp
       gap: 118px
+
     p
       color: #E63E3A
       font-family: Suisse Intl
@@ -67,6 +69,7 @@ export default {
       display: flex
       align-items: center
       padding: 18px 20px
+      background-color: #E63E3A
 
 .icon
     height: 25px

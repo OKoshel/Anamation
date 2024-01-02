@@ -8,8 +8,10 @@
     </div>
     <div class="unvisible">
       <HeroComponent />
-      <Navigation />
-      <GraphComponent />
+      <div class="position-relative rest-blocks">
+        <Navigation />
+        <GraphComponent />
+      </div>
     </div>
   </div>
 </template>
@@ -21,9 +23,11 @@ import GraphComponent from "@/components/graph/GraphComponent.vue";
 import UnvisibleComponent from "@/components/hero/UnvisibleComponent.vue";
 import LogoText from "@/components/hero/LogoText.vue";
 import { gsap } from "gsap";
+import NavbarHeader from "@/components/navbar/NavbarHeader.vue";
 
 export default {
   components: {
+    NavbarHeader,
     HeroComponent,
     Navigation,
     GraphComponent,
@@ -42,7 +46,15 @@ export default {
         y: -window.innerHeight,
         delay: 8,
         onStart: () => {
-          gsap.set(".unvisible", { display: "block" });
+          gsap.set(".unvisible", {
+            display: "block",
+            opacity: 1,
+          });
+          gsap.to(".rest-blocks", {
+            duration: 2,
+            y: -86,
+            delay: 1,
+          });
         },
       });
     },
@@ -50,21 +62,23 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.logo-text {
-  position: absolute;
-}
+<style lang="sass" scoped>
 
-.container-block {
-  overflow: hidden;
-}
+.logo-text
+  position: fixed
+  z-index: 6
 
-.visible {
-  height: 100vh;
-  position: relative;
-  z-index: 9999;
-}
-.unvisible {
-  display: none;
-}
+.container-block
+  overflow: hidden
+
+.visible
+  height: 100vh
+  position: relative
+  z-index: 4
+
+.unvisible
+  display: none
+
+.rest-blocks
+  z-index: 6
 </style>
