@@ -22,7 +22,7 @@ export default {
     this.animateText();
   },
   methods: {
-    animateText() {
+    startTextAnimation() {
       const textElement = this.$refs.textElement;
       const textElement2 = this.$refs.textElement2;
       const text = "Respect";
@@ -30,45 +30,72 @@ export default {
       const chars = text.split("");
       const chars2 = text2.split("");
 
-      let tl = gsap.timeline();
-      tl.to(".timer", { duration: 2, opacity: 1 });
+      let tl = gsap.timeline({});
 
-      tl.to(".timer", { opacity: 0, delay: 0.7 });
-
-      tl.fromTo(".text", { opacity: 0 }, { opacity: 0 });
-
-      tl.to({}, { duration: 0 });
-
-      tl.to(".text", { opacity: 1 });
-
-      gsap.set(textElement, {
-        text: chars,
+      tl.to(".text", {
+        opacity: 1,
+        delay: 1,
       });
-
-      gsap.set(textElement2, {
-        text: chars2,
-      });
-
-      gsap.to(textElement, {
-        duration: 4,
-        text: {
-          value: chars.join("").slice(1),
-          delimiter: "",
-          padSpace: true,
-        },
-        ease: "power1.inOut",
-        delay: 4,
-      });
-
       gsap.to(textElement2, {
-        duration: 4,
+        duration: 3,
         text: {
           value: chars2.join("").slice(1),
           delimiter: "",
           padSpace: true,
         },
         ease: "power1.inOut",
-        delay: 4,
+        delay: 1,
+        onComplete: () => {
+          this.changeBlock();
+        },
+      });
+      gsap.to(textElement, {
+        duration: 3,
+        text: {
+          value: chars.join("").slice(1),
+          delimiter: "",
+          padSpace: true,
+        },
+        ease: "power1.inOut",
+        delay: 1,
+      });
+    },
+    animateText() {
+      let tl = gsap.timeline({
+        onComplete: () => {
+          this.startTextAnimation();
+        },
+      });
+
+      tl.to(".timer", {
+        duration: 2,
+        opacity: 1,
+        onComplete: () => {
+          gsap.set(".timer", {
+            opacity: 0,
+            delay: 0.7,
+          });
+        },
+      });
+    },
+
+    changeBlock() {
+      let tl = gsap.timeline();
+      tl.to(".visible", {
+        duration: 2,
+        y: -window.innerHeight,
+        onStart: () => {
+          gsap.set(".unvisible", {
+            display: "block",
+            opacity: 1,
+          });
+
+          let nestedTl = gsap.timeline({ delay: 1 });
+          nestedTl.to(".rest-blocks", {
+            duration: 2,
+            y: -86,
+          });
+        },
       });
     },
   },
@@ -110,4 +137,5 @@ export default {
   padding-top: 10px
   position: relative
   z-index: 99999
+  opacity: 0
 </style>

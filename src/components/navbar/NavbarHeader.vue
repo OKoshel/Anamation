@@ -20,21 +20,11 @@
 </template>
 
 <script>
-import SvgIcon from "@jamescoyle/vue-icon";
-import { mdiCartArrowDown } from "@mdi/js";
-import { mdiAccountEdit } from "@mdi/js";
 import NavbarItems from "@/components/navbar/components/NavbarItems.vue";
 
 export default {
   name: "navbarItems",
-  components: { SvgIcon, NavbarItems },
-
-  data() {
-    return {
-      mdiCart: mdiCartArrowDown,
-      account: mdiAccountEdit,
-    };
-  },
+  components: { NavbarItems },
 };
 </script>
 

@@ -1,7 +1,8 @@
 <template>
   <div class="graph-title d-flex flex-column position-relative">
     <div class="col-8">
-      <h2>Consistent leads flow to streamline Your business growth.</h2>
+      <h2 class="typing-text"></h2>
+      <h2></h2>
     </div>
     <p>
       We combine disruptive marketing techniques with proven<br />
@@ -11,15 +12,45 @@
 </template>
 
 <script>
-export default {};
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  mounted() {
+    this.textTypingScroll();
+  },
+  methods: {
+    textTypingScroll() {
+      let textElem =
+        "Consistent leads flow to streamline Your business growth.";
+
+      gsap.to(".typing-text", {
+        text: {
+          value: textElem,
+        },
+
+        scrollTrigger: {
+          trigger: ".navigation",
+          start: "center top",
+          end: "bottom",
+          scrub: true,
+          markers: true,
+        },
+      });
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
+.typing-text
+  height: 150px
 .graph-title
     h2
       color: black
       font-family: Suisse Intl
-      font-size: 82px
+      font-size: 3.5rem
       font-style: normal
       font-weight: 400
       line-height: 96%
@@ -31,5 +62,5 @@ export default {};
       font-weight: 400
       line-height: 120.5%
       position: absolute
-      top: 280px
+      top: 140px
 </style>

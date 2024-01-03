@@ -1,10 +1,21 @@
 <template>
-  <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+  <div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas ref="myChart" class="w-100 chart"></canvas>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import { Bar } from "vue-chartjs";
+import Chart from "chart.js/auto";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import ChartDeferred from "chartjs-plugin-deferred";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+Chart.register(ChartDeferred);
+
 import {
   Chart as ChartJS,
   Title,
@@ -14,6 +25,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
+import { gsap } from "gsap";
 
 ChartJS.register(
   Title,
@@ -26,11 +38,36 @@ ChartJS.register(
 );
 
 export default {
-  name: "BarChart",
-  components: { Bar },
   data() {
     return {
-      chartData: {
+      chartVersion: Chart.version,
+    };
+  },
+  mounted() {
+    this.renderChart();
+    this.scrollGraph();
+  },
+  methods: {
+    scrollGraph() {
+      const chartElement = this.$refs.myChart;
+      gsap.to(chartElement, {
+        scrollTrigger: {
+          trigger: chartElement,
+          start: "top top",
+          end: "center center",
+          scrub: true,
+          markers: true,
+          onUpdate: () => {
+            if (chartElement.chart) {
+              chartElement.chart.destroy();
+              this.renderChart();
+            }
+          },
+        },
+      });
+    },
+    renderChart() {
+      const data = {
         labels: [
           "27",
           "53",
@@ -47,10 +84,11 @@ export default {
           "78",
           "90",
         ],
+
         datasets: [
           {
             data: [27, 53, 61, 58, 30, 63, 55, 63, 71, 76, 67, 88, 78, 90],
-            backgroundColor: "#E63E3A",
+            backgroundColor: ["#E63E3A"],
             borderWidth: 1,
             borderColor: "#fff",
             barPercentage: 1.3,
@@ -60,36 +98,74 @@ export default {
               align: "bottom",
               clamp: true,
               offset: -40,
+              overflow: "allow",
+              plotOptions: "outside",
+              crop: false,
             },
           },
         ],
-      },
-      chartOptions: {
-        responsive: true,
-        scales: {
-          x: {
-            display: false,
-            grid: {
-              display: false,
+      };
+
+      const config = {
+        type: "bar",
+        data,
+        options: {
+          animation: {
+            // onComplete: () => {
+            //   delayed: true;
+            // },
+            delay: (context) => {
+              let delay = 0;
+              if (context.type === "data" && context.mode === "default") {
+                delay = context.dataIndex * 100;
+              }
+              return delay;
             },
-            ticks: {
-              max: 33,
+          },
+          scales: {
+            x: {
               display: false,
+              grid: {
+                display: false,
+              },
+              ticks: {
+                max: 33,
+                display: false,
+                beginAtZero: true,
+              },
+            },
+            y: {
               beginAtZero: true,
+              display: false,
             },
           },
-          y: {
-            beginAtZero: true,
-            display: false,
+          responsive: true,
+
+          plugins: {
+            legend: {
+              display: false,
+            },
           },
         },
-        plugins: {
-          legend: {
-            display: false,
-          },
-        },
-      },
-    };
+      };
+
+      new Chart(this.$refs.myChart, config);
+    },
   },
 };
 </script>
+
+<style scoped>
+.chartMenu p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.chartBox {
+  width: 100%;
+  background: white;
+}
+.chart {
+  height: 100%;
+}
+</style>

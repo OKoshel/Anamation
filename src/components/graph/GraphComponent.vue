@@ -10,6 +10,7 @@
 import GraphTitle from "@/components/graph/components/GraphTitle.vue";
 import Graph from "@/components/graph/components/Graph.vue";
 import GorizontalGraph from "@/components/graph/components/GorizontalGraph.vue";
+
 export default {
   components: {
     GraphTitle,
@@ -19,8 +20,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .graph-wrapp
-  padding: 107px 20px
+  padding: 107px 20px 128px 20px
   background-color: white
 </style>
