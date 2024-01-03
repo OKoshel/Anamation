@@ -52,17 +52,10 @@ export default {
       const chartElement = this.$refs.myChart;
       gsap.to(chartElement, {
         scrollTrigger: {
-          trigger: chartElement,
-          start: "top top",
-          end: "center center",
+          trigger: ".chartCard",
+          start: 1600,
+          end: 2000,
           scrub: true,
-          markers: true,
-          onUpdate: () => {
-            if (chartElement.chart) {
-              chartElement.chart.destroy();
-              this.renderChart();
-            }
-          },
         },
       });
     },

@@ -2,13 +2,19 @@
   <div class="logo-text">
     <LogoText />
   </div>
-
-  <div class="visible">
+  <div class="visible-component">
     <UnvisibleComponent />
   </div>
   <div class="unvisible">
-    <HeroComponent />
-    <div class="position-relative rest-blocks">
+    <div
+      class="hero-component"
+      ref="heroC"
+      :style="{ 'padding-top': `${ninetyPercentVH}px` }"
+    >
+      <HeroComponent />
+    </div>
+
+    <div class="position-relative rest-blocks" ref="rest-blocks">
       <Navigation />
       <GraphComponent />
       <MarketingComponent />
@@ -22,7 +28,6 @@ import Navigation from "@/components/navbar/Navigation.vue";
 import GraphComponent from "@/components/graph/GraphComponent.vue";
 import UnvisibleComponent from "@/components/hero/UnvisibleComponent.vue";
 import LogoText from "@/components/hero/LogoText.vue";
-import { gsap } from "gsap";
 import NavbarHeader from "@/components/navbar/NavbarHeader.vue";
 import MarketingComponent from "@/components/marketing/MarketingComponent.vue";
 
@@ -36,52 +41,25 @@ export default {
     MarketingComponent,
     LogoText,
   },
-  // mounted() {
-  //   this.changeBlock();
-  // },
+  data() {
+    return {
+      ninetyPercentVH: 0,
+    };
+  },
+  mounted() {
+    this.calculatePaddingTop();
+    window.addEventListener("resize", this.calculatePaddingTop);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.calculatePaddingTop);
+  },
   methods: {
-    // changeBlock() {
-    //   let tl = gsap.timeline();
-    //
-    //   tl.to(".visible", {
-    //     duration: 2,
-    //     delay: 8,
-    //     y: -window.innerHeight,
-    //     onStart: () => {
-    //       gsap.set(".unvisible", {
-    //         display: "block",
-    //         opacity: 1,
-    //       });
-    //
-    //       // Create a nested timeline for the subsequent animations
-    //       let nestedTl = gsap.timeline({ delay: 1 });
-    //       nestedTl.to(".rest-blocks", {
-    //         duration: 2,
-    //         y: -86,
-    //       });
-    //     },
-    //   });
-    // },
-    // changeBlock() {
-    //   let tl = gsap.timeline();
-    //
-    //   tl.to(".visible", {
-    //     duration: 2,
-    //     y: -window.innerHeight,
-    //     delay: 8,
-    //     onStart: () => {
-    //       gsap.set(".unvisible", {
-    //         display: "block",
-    //         opacity: 1,
-    //       });
-    //       gsap.to(".rest-blocks", {
-    //         duration: 2,
-    //         y: -86,
-    //         delay: 1,
-    //       });
-    //     },
-    //   });
-    // },
+    calculatePaddingTop() {
+      console.log(this.$refs.heroC);
+      const heroHeight = this.$refs.heroC.clientHeight;
+      console.log(heroHeight);
+      this.ninetyPercentVH = heroHeight * 0.95;
+    },
   },
 };
 </script>
@@ -91,21 +69,21 @@ export default {
 .logo-text
   position: fixed
   z-index: 6
+  top: 0
 
-.container-block
-  overflow: hidden
 
-.visible
-  height: 100vh
+
+
+.visible-component
+  //height: 100vh
   position: relative
   z-index: 4
 
 .unvisible
   display: none
-  height: 100vh
+  //height: 100vh
 
 .rest-blocks
   z-index: 6
-
-  //margin-top: -180px
+  padding-top: 780px
 </style>

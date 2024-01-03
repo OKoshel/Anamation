@@ -2,7 +2,7 @@
   <div class="navigation position-relative">
     <NavbarHeader />
     <div class="box-wrapp">
-      <div class="d-flex navigation-wrapp">
+      <div class="d-flex navigation-wrapp" ref="boxWrapp">
         <div class="col-6">
           <h5>
             B2B Marketing & LinkedIn Lead<br />
@@ -36,17 +36,17 @@ export default {
     setupScrollTrigger() {
       let textElem = "Growing businesses by building relationships";
 
-      gsap.to(".typing_text", {
+      gsap.to(this.$el.querySelector(".typing_text"), {
         text: {
           value: textElem,
         },
 
         scrollTrigger: {
-          trigger: ".navigation",
-          start: "top top",
-          end: "center",
+          trigger: this.$el.querySelector(".navigation"),
+          start: 150,
+          end: 600,
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       });
     },

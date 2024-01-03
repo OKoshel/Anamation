@@ -17,15 +17,18 @@ function setupScrollTrigger() {
       duration: 0.5,
       scrollTrigger: {
         trigger: line,
-
-        start: "top 130%",
-        end: "top 50%",
+        start: "top 80%", // Adjusted start value
+        end: "top 50%", // Adjusted end value
+        // start: 1800,
+        // end: 2300,
         scrub: true,
+        // markers: true,
       },
     });
   });
 }
 </script>
+
 <template>
   <div class="d-flex flex-column">
     <div class="first-line line d-flex justify-content-end">

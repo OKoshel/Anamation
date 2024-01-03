@@ -1,7 +1,7 @@
 <template>
   <div class="graph-title d-flex flex-column position-relative">
     <div class="col-8">
-      <h2 class="typing-text"></h2>
+      <h2 class="text"></h2>
       <h2></h2>
     </div>
     <p>
@@ -25,17 +25,16 @@ export default {
       let textElem =
         "Consistent leads flow to streamline Your business growth.";
 
-      gsap.to(".typing-text", {
+      gsap.to(this.$el.querySelector(".text"), {
         text: {
           value: textElem,
         },
 
         scrollTrigger: {
-          trigger: ".navigation",
-          start: "center top",
-          end: "bottom",
+          trigger: ".graph-title",
+          start: 1000,
+          end: 1300,
           scrub: true,
-          markers: true,
         },
       });
     },
@@ -44,7 +43,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.typing-text
+.text
   height: 150px
 .graph-title
     h2

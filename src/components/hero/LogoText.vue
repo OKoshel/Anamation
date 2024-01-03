@@ -81,17 +81,18 @@ export default {
 
     changeBlock() {
       let tl = gsap.timeline();
-      tl.to(".visible", {
+      tl.to(".visible-component", {
         duration: 2,
         y: -window.innerHeight,
+        display: "none",
+
         onStart: () => {
           gsap.set(".unvisible", {
             display: "block",
             opacity: 1,
           });
 
-          let nestedTl = gsap.timeline({ delay: 1 });
-          nestedTl.to(".rest-blocks", {
+          gsap.to(".rest-blocks", {
             duration: 2,
             y: -86,
           });
