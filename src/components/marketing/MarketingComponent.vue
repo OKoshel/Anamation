@@ -32,7 +32,6 @@ export default {
           start: "bottom center",
           end: "bottom",
           scrub: true,
-          markers: true,
         },
       });
     },

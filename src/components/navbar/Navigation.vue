@@ -46,7 +46,6 @@ export default {
           start: 150,
           end: 600,
           scrub: true,
-          // markers: true,
         },
       });
     },
