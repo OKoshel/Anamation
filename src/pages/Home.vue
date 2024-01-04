@@ -71,9 +71,6 @@ export default {
   z-index: 6
   top: 0
 
-
-
-
 .visible-component
   //height: 100vh
   position: relative
@@ -81,6 +78,7 @@ export default {
 
 .unvisible
   display: none
+
   //height: 100vh
 
 .rest-blocks

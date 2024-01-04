@@ -1,5 +1,5 @@
 <template>
-  <div class="top-0 w-100 hero" ref="hero">
+  <div class="w-100 hero" ref="hero">
     <div class="main-hero">
       <div class="main-hero__logo d-flex justify-content-end">
         <h4 class="main-hero__logo-name">Digital Marketing<br />Agency</h4>
@@ -49,6 +49,7 @@ export default {
           start: "top top",
           end: "600px",
           scrub: true,
+
           // markers: true,
           onEnter: () => {
             const heroHeight = this.$refs.hero.clientHeight;
@@ -56,13 +57,42 @@ export default {
               paddingTop: `${heroHeight}px`,
             });
           },
+
+          onUpdate: (self) => {
+            const brith = 1 - self.progress;
+            gsap.to(".main-hero__image", {
+              filter: `brightness(${brith})`,
+            });
+          },
+
           onLeaveBack: () => {
             const heroHeight = this.$refs.hero.clientHeight;
             gsap.to(".rest-blocks", {
               paddingTop: `${heroHeight}px`,
             });
-            gsap.to(this.$refs.hero, {
-              position: "absolute",
+            // gsap.to(this.$refs.hero, {
+            //   position: "absolute",
+            //   height: "100vh",
+            // });
+          },
+        },
+      });
+      gsap.to(".hero", {
+        scrollTrigger: {
+          trigger: ".chartCard",
+          start: "1500px",
+          end: "2000px",
+          scrub: true,
+
+          // markers: true,
+          onEnter: () => {
+            gsap.to(".hero", {
+              height: "50%",
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(".hero", {
+              height: "100vh",
             });
           },
         },
@@ -72,16 +102,18 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .hero
   height: 100vh
-  position: absolute
+  position: fixed
+  top: 0
 
 
 .main-hero
   height: 100%
   &__image
     height: 100%
+    filter: brightness(1)
     img
       height: 100%
       object-fit: cover
@@ -99,7 +131,7 @@ export default {
       color: #E63E3A
       text-align: right
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-      font-family: Suisse Intl
+      font-family: Suisse Intl, serif
       font-size: 18px
       font-style: normal
       font-weight: 400

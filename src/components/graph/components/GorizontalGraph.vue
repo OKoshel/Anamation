@@ -22,7 +22,7 @@ function setupScrollTrigger() {
         // start: 1800,
         // end: 2300,
         scrub: true,
-        // markers: true,
+        markers: true,
       },
     });
   });
