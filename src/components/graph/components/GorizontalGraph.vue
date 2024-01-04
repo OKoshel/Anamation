@@ -17,12 +17,9 @@ function setupScrollTrigger() {
       duration: 0.5,
       scrollTrigger: {
         trigger: line,
-        start: "top 80%", // Adjusted start value
-        end: "top 50%", // Adjusted end value
-        // start: 1800,
-        // end: 2300,
+        start: "top 80%",
+        end: "top 50%",
         scrub: true,
-        markers: true,
       },
     });
   });
@@ -30,7 +27,7 @@ function setupScrollTrigger() {
 </script>
 
 <template>
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column box">
     <div class="first-line line d-flex justify-content-end">
       <div class="d-flex justify-content-end gap-3">
         <p class="line-text">Revenue generated for clients</p>
@@ -67,6 +64,7 @@ function setupScrollTrigger() {
 </template>
 
 <style lang="sass">
+
 .line
   height: 93px
   background-color: #101820
@@ -74,16 +72,18 @@ function setupScrollTrigger() {
   display: flex
   align-items: center
   border: 0.6px solid white
+
   p
     margin-bottom: 0px
+
   &-number
     color: #E63E3A
     font-size: 40px
     line-height: 40px
+
   &-text
     color: #E63E3A
     text-align: right
-    font-family: Suisse Intl
     font-size: 22px
     font-style: normal
     font-weight: 400

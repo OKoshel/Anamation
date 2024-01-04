@@ -30,7 +30,9 @@ export default {
       const chars = text.split("");
       const chars2 = text2.split("");
 
-      let tl = gsap.timeline({});
+      let tl = gsap.timeline({
+        onComplete: () => {},
+      });
 
       tl.to(".text", {
         opacity: 1,
@@ -61,6 +63,9 @@ export default {
       });
     },
     animateText() {
+      // gsap.set(".parent", {
+      //   overflow: "hidden",
+      // });
       let tl = gsap.timeline({
         onComplete: () => {
           this.startTextAnimation();
@@ -87,10 +92,9 @@ export default {
         display: "none",
 
         onStart: () => {
-          gsap.set(".unvisible", {
-            display: "block",
-            opacity: 1,
-          });
+          // gsap.set(".parent", {
+          //   overflow: "scroll",
+          // });
 
           gsap.to(".rest-blocks", {
             duration: 2,
@@ -117,12 +121,11 @@ export default {
   h2
     font-size: 70px
     color: #E63E3A
-    font-family: Suisse Intl
+
 
 .letter, .word
   font-size: 70px
   color: #E63E3A
-  font-family: Suisse Intl
   z-index: 999
 
 .cube

@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style lang="sass">
+
 .sidebar-item
   padding: 10px
   width: 100%
@@ -29,7 +30,6 @@ export default {
   text-decoration: none
   white-space: nowrap
   color: #101820
-  font-family: Suisse Intl
   font-size: 22px
   font-style: normal
   font-weight: 400

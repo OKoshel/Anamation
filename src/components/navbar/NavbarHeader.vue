@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-wrapp d-flex justify-content-between">
+  <div class="navbar-wrapp d-flex justify-content-between" ref="nav">
     <img src="/header-logo.svg" />
     <div>
       <NavbarItems />
@@ -47,7 +47,6 @@ export default {
 
     p
       color: #E63E3A
-      font-family: Suisse Intl
       font-size: 22px
       font-weight: 400
       margin-bottom: 0px

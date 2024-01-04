@@ -55,6 +55,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
 .navigation
   height: 868px
   background-color: #E63E3A
@@ -65,7 +66,6 @@ export default {
   h2.typing_text
     color: #101820
     text-align: right
-    font-family: Suisse Intl
     font-size: 100px
     font-style: normal
     font-weight: 400

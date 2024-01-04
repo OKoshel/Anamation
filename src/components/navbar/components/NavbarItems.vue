@@ -23,25 +23,25 @@ export default {
           name: "Sevices",
           id: 1,
           isActive: false,
-          href: "/services",
+          href: "#",
         },
         {
           name: "Case Studies",
           id: 2,
           isActive: true,
-          href: "/cases",
+          href: "#",
         },
         {
           name: "Blog",
           id: 3,
           isActive: false,
-          href: "/blog",
+          href: "#",
         },
         {
           name: "About Us",
           id: 4,
           isActive: false,
-          href: "/about",
+          href: "#",
         },
       ],
     };
@@ -55,6 +55,7 @@ export default {
 </script>
 
 <style lang="sass">
+
 .sidebar
 
     &-items

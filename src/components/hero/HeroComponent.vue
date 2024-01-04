@@ -50,44 +50,25 @@ export default {
           end: "600px",
           scrub: true,
 
-          // markers: true,
-          onEnter: () => {
-            const heroHeight = this.$refs.hero.clientHeight;
-            gsap.to(".rest-blocks", {
-              paddingTop: `${heroHeight}px`,
-            });
-          },
-
           onUpdate: (self) => {
             const brith = 1 - self.progress;
             gsap.to(".main-hero__image", {
               filter: `brightness(${brith})`,
             });
           },
-
-          onLeaveBack: () => {
-            const heroHeight = this.$refs.hero.clientHeight;
-            gsap.to(".rest-blocks", {
-              paddingTop: `${heroHeight}px`,
-            });
-            // gsap.to(this.$refs.hero, {
-            //   position: "absolute",
-            //   height: "100vh",
-            // });
-          },
         },
       });
       gsap.to(".hero", {
         scrollTrigger: {
           trigger: ".chartCard",
-          start: "1500px",
-          end: "2000px",
+          start: "top center",
+          end: "bottom",
           scrub: true,
 
           // markers: true,
           onEnter: () => {
             gsap.to(".hero", {
-              height: "50%",
+              height: "0px",
             });
           },
           onLeaveBack: () => {
@@ -131,7 +112,6 @@ export default {
       color: #E63E3A
       text-align: right
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-      font-family: Suisse Intl, serif
       font-size: 18px
       font-style: normal
       font-weight: 400

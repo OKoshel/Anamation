@@ -49,7 +49,6 @@ export default {
   width: 100%
   z-index: 3
 
-
 .timer
   position: absolute
   font-size: 140px

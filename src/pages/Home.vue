@@ -2,18 +2,15 @@
   <div class="logo-text">
     <LogoText />
   </div>
-  <div class="visible-component">
-    <UnvisibleComponent />
+  <div class="parent">
+    <div class="visible-component">
+      <UnvisibleComponent />
+    </div>
   </div>
   <div class="unvisible">
-    <div
-      class="hero-component"
-      ref="heroC"
-      :style="{ 'padding-top': `${ninetyPercentVH}px` }"
-    >
+    <div class="hero-component">
       <HeroComponent />
     </div>
-
     <div class="position-relative rest-blocks" ref="rest-blocks">
       <Navigation />
       <GraphComponent />
@@ -41,26 +38,6 @@ export default {
     MarketingComponent,
     LogoText,
   },
-  data() {
-    return {
-      ninetyPercentVH: 0,
-    };
-  },
-  mounted() {
-    this.calculatePaddingTop();
-    window.addEventListener("resize", this.calculatePaddingTop);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.calculatePaddingTop);
-  },
-  methods: {
-    calculatePaddingTop() {
-      console.log(this.$refs.heroC);
-      const heroHeight = this.$refs.heroC.clientHeight;
-      console.log(heroHeight);
-      this.ninetyPercentVH = heroHeight * 0.95;
-    },
-  },
 };
 </script>
 
@@ -72,16 +49,13 @@ export default {
   top: 0
 
 .visible-component
-  //height: 100vh
   position: relative
   z-index: 4
 
 .unvisible
-  display: none
-
-  //height: 100vh
+  display: block
 
 .rest-blocks
   z-index: 6
-  padding-top: 780px
+  padding-top: 100vh
 </style>

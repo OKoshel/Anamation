@@ -148,17 +148,16 @@ export default {
 };
 </script>
 
-<style scoped>
-.chartMenu p {
-  padding: 10px;
-  font-size: 20px;
-}
+<style lang="sass" scoped>
 
-.chartBox {
-  width: 100%;
-  background: white;
-}
-.chart {
-  height: 100%;
-}
+.chartMenu p
+  padding: 10px
+  font-size: 20px
+
+.chartBox
+  width: 100%
+  background: white
+
+.chart
+  height: 100%
 </style>

@@ -35,6 +35,7 @@ export default {
           start: 1000,
           end: 1300,
           scrub: true,
+          markers: true,
         },
       });
     },
@@ -48,14 +49,12 @@ export default {
 .graph-title
     h2
       color: black
-      font-family: Suisse Intl
       font-size: 3.5rem
       font-style: normal
       font-weight: 400
       line-height: 96%
     p
       color: #101820
-      font-family: Suisse Intl
       font-size: 22px
       font-style: normal
       font-weight: 400
