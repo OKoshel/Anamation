@@ -35,7 +35,6 @@ export default {
           start: 1000,
           end: 1300,
           scrub: true,
-          markers: true,
         },
       });
     },

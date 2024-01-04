@@ -27,7 +27,7 @@ function setupScrollTrigger() {
 </script>
 
 <template>
-  <div class="d-flex flex-column box">
+  <div class="d-flex flex-column lines">
     <div class="first-line line d-flex justify-content-end">
       <div class="d-flex justify-content-end gap-3">
         <p class="line-text">Revenue generated for clients</p>

@@ -2,7 +2,7 @@
   <div class="p-4">
     <div class="marketing">
       <div class="d-flex flex-column justify-content-end align-items-end">
-        <h1 class="">Trusted long-term partner</h1>
+        <h1 class="text-trusted"></h1>
         <p>For leading B2B tech and service companies</p>
       </div>
     </div>
@@ -10,7 +10,34 @@
 </template>
 
 <script>
-export default {};
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  mounted() {
+    this.typingText();
+  },
+  methods: {
+    typingText() {
+      let textElem = "Trusted long-term partner";
+
+      gsap.to(this.$el.querySelector(".text-trusted"), {
+        text: {
+          value: textElem,
+        },
+
+        scrollTrigger: {
+          trigger: ".chartCard",
+          start: "bottom center",
+          end: "bottom",
+          scrub: true,
+          markers: true,
+        },
+      });
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
