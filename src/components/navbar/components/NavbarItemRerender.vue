@@ -33,7 +33,8 @@ export default {
   font-size: 22px
   font-style: normal
   font-weight: 400
-
+  &:hover
+    background-color: transparent
 
 //.active
 //  background-color: aliceblue

@@ -22,6 +22,29 @@ export default {
     this.animateText();
   },
   methods: {
+    animateText() {
+      gsap.to(".unvisible", {
+        display: "none",
+      });
+
+      let tl = gsap.timeline({
+        onComplete: () => {
+          this.startTextAnimation();
+        },
+      });
+
+      tl.to(".timer", {
+        duration: 2,
+        opacity: 1,
+        onComplete: () => {
+          gsap.set(".timer", {
+            opacity: 0,
+            delay: 0.7,
+          });
+        },
+      });
+    },
+
     startTextAnimation() {
       const textElement = this.$refs.textElement;
       const textElement2 = this.$refs.textElement2;
@@ -48,6 +71,9 @@ export default {
         ease: "power1.inOut",
         delay: 1,
         onComplete: () => {
+          gsap.to(".unvisible", {
+            display: "block",
+          });
           this.changeBlock();
         },
       });
@@ -62,42 +88,18 @@ export default {
         delay: 1,
       });
     },
-    animateText() {
-      gsap.to(".unvisible", {
-        display: "none",
-      });
-
-      let tl = gsap.timeline({
-        onComplete: () => {
-          this.startTextAnimation();
-        },
-      });
-
-      tl.to(".timer", {
-        duration: 2,
-        opacity: 1,
-        onComplete: () => {
-          gsap.set(".timer", {
-            opacity: 0,
-            delay: 0.7,
-          });
-        },
-      });
-    },
 
     changeBlock() {
+      // gsap.to(".unvisible", {
+      //   display: "block",
+      // });
       let tl = gsap.timeline();
       tl.to(".visible-component", {
         duration: 2,
         y: -window.innerHeight,
-        // visibility: "hidden",
         display: "none",
 
         onStart: () => {
-          gsap.to(".unvisible", {
-            display: "block",
-          });
-
           gsap.to(".rest-blocks", {
             duration: 2,
             y: -86,

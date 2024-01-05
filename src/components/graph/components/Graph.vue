@@ -104,9 +104,6 @@ export default {
         data,
         options: {
           animation: {
-            // onComplete: () => {
-            //   delayed: true;
-            // },
             delay: (context) => {
               let delay = 0;
               if (context.type === "data" && context.mode === "default") {

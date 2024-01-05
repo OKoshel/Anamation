@@ -65,7 +65,6 @@ export default {
           end: "bottom",
           scrub: true,
 
-          // markers: true,
           onEnter: () => {
             gsap.to(".hero", {
               height: "0px",

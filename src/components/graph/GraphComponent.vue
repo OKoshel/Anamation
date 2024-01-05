@@ -1,8 +1,8 @@
 <template>
   <div class="graph-wrapp">
-    <GraphTitle />
-    <Graph />
-    <Lines />
+    <graph-title />
+    <graph />
+    <lines />
   </div>
 </template>
 
