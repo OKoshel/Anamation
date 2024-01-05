@@ -80,7 +80,7 @@ export default {
 
         datasets: [
           {
-            data: [27, 53, 61, 58, 30, 63, 55, 63, 71, 76, 67, 88, 78, 90],
+            data: [27, 53, 61, 58, 30, 63, 55, 63, 71, 76, 67, 70, 69, 76],
             backgroundColor: ["#E63E3A"],
             borderWidth: 1,
             borderColor: "#fff",
@@ -91,9 +91,9 @@ export default {
               align: "bottom",
               clamp: true,
               offset: -40,
-              overflow: "allow",
-              plotOptions: "outside",
               crop: false,
+              display: true,
+              clip: false,
             },
           },
         ],

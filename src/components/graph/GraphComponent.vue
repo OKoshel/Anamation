@@ -2,25 +2,26 @@
   <div class="graph-wrapp">
     <GraphTitle />
     <Graph />
-    <GorizontalGraph />
+    <Lines />
   </div>
 </template>
 
 <script>
 import GraphTitle from "@/components/graph/components/GraphTitle.vue";
 import Graph from "@/components/graph/components/Graph.vue";
-import GorizontalGraph from "@/components/graph/components/GorizontalGraph.vue";
+import Lines from "@/components/graph/components/Lines.vue";
 
 export default {
   components: {
     GraphTitle,
     Graph,
-    GorizontalGraph,
+    Lines,
   },
 };
 </script>
 
 <style lang="sass">
+
 .graph-wrapp
   padding: 107px 20px 128px 20px
   background-color: white

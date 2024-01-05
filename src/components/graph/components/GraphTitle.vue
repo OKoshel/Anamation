@@ -43,8 +43,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+
 .text
   height: 150px
+
 .graph-title
     h2
       color: black

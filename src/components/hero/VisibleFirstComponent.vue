@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column unvisible-component">
+  <div class="d-flex flex-column visible-first-component">
     <div class="timer" id="numberContainer">{{ currentNumber }}</div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
 
 <style lang="sass" scoped>
 
-.unvisible-component
+.visible-first-component
   height: 100vh
   background-color: rgba(0, 0, 0, 0.99)
   color: #E63E3A

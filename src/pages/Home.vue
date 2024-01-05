@@ -1,20 +1,22 @@
 <template>
-  <div class="logo-text">
-    <LogoText />
-  </div>
   <div class="parent">
+    <div class="logo-text">
+      <LogoText />
+    </div>
+
     <div class="visible-component">
-      <UnvisibleComponent />
+      <VisibleFirstComponent />
     </div>
-  </div>
-  <div class="unvisible">
-    <div class="hero-component">
-      <HeroComponent />
-    </div>
-    <div class="position-relative rest-blocks" ref="rest-blocks">
-      <Navigation />
-      <GraphComponent />
-      <MarketingComponent />
+
+    <div class="unvisible">
+      <div class="hero-component">
+        <HeroComponent />
+      </div>
+      <div class="position-relative rest-blocks" ref="rest-blocks">
+        <Navigation />
+        <GraphComponent />
+        <MarketingComponent />
+      </div>
     </div>
   </div>
 </template>
@@ -23,7 +25,7 @@
 import HeroComponent from "@/components/hero/HeroComponent.vue";
 import Navigation from "@/components/navbar/Navigation.vue";
 import GraphComponent from "@/components/graph/GraphComponent.vue";
-import UnvisibleComponent from "@/components/hero/UnvisibleComponent.vue";
+import VisibleFirstComponent from "@/components/hero/VisibleFirstComponent.vue";
 import LogoText from "@/components/hero/LogoText.vue";
 import NavbarHeader from "@/components/navbar/NavbarHeader.vue";
 import MarketingComponent from "@/components/marketing/MarketingComponent.vue";
@@ -34,7 +36,7 @@ export default {
     HeroComponent,
     Navigation,
     GraphComponent,
-    UnvisibleComponent,
+    VisibleFirstComponent,
     MarketingComponent,
     LogoText,
   },

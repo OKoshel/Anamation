@@ -63,9 +63,10 @@ export default {
       });
     },
     animateText() {
-      // gsap.set(".parent", {
-      //   overflow: "hidden",
-      // });
+      gsap.to(".unvisible", {
+        display: "none",
+      });
+
       let tl = gsap.timeline({
         onComplete: () => {
           this.startTextAnimation();
@@ -89,12 +90,13 @@ export default {
       tl.to(".visible-component", {
         duration: 2,
         y: -window.innerHeight,
+        // visibility: "hidden",
         display: "none",
 
         onStart: () => {
-          // gsap.set(".parent", {
-          //   overflow: "scroll",
-          // });
+          gsap.to(".unvisible", {
+            display: "block",
+          });
 
           gsap.to(".rest-blocks", {
             duration: 2,

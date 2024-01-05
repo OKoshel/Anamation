@@ -42,6 +42,7 @@ export default {
     gap: 55px
     flex-shrink: 0
     background: #101820
+
     &-wrapp
       gap: 118px
 
