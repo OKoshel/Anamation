@@ -131,4 +131,7 @@ export default {
     &-third
       top: -10px
       left: 384px
+#intro-slider
+  overflow: hidden
+  padding: 20px
 </style>
