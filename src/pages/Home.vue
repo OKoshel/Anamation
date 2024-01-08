@@ -14,6 +14,7 @@
         <navigation />
         <graph-component />
         <marketing-component />
+        <Services />
       </div>
     </div>
   </div>
@@ -27,6 +28,7 @@ import VisibleFirst from "@/components/hero/VisibleFirst.vue";
 import LogoText from "@/components/hero/LogoText.vue";
 import NavbarHeader from "@/components/navbar/NavbarHeader.vue";
 import MarketingComponent from "@/components/marketing/MarketingComponent.vue";
+import Services from "@/components/services/Services.vue";
 
 export default {
   components: {
@@ -37,6 +39,7 @@ export default {
     VisibleFirst,
     MarketingComponent,
     LogoText,
+    Services,
   },
 };
 </script>

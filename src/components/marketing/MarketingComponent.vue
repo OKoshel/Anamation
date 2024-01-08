@@ -1,10 +1,8 @@
 <template>
-  <div class="p-4">
-    <div class="marketing">
-      <div class="d-flex flex-column justify-content-end align-items-end">
-        <h1 class="text-trusted"></h1>
-        <p>For leading B2B tech and service companies</p>
-      </div>
+  <div class="marketing">
+    <div class="d-flex flex-column justify-content-end align-items-end">
+      <h1 class="text-trusted"></h1>
+      <p>For leading B2B tech and service companies</p>
     </div>
   </div>
 </template>
@@ -41,11 +39,11 @@ export default {
 
 <style lang="sass" scoped>
 .marketing
-  padding: 20px
+  padding: 20px 20px 40px 20px
   border-top: 1px solid red
   border-bottom: 1px solid red
-  margin-bottom: 40px
   background-color: white
+
   h1
     color: #E63E3A
 
